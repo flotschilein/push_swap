@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/28 17:12:22 by fbraune           #+#    #+#             */
+/*   Updated: 2025/05/28 22:13:45 by fbraune          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/push_swap.h"
+
+void	push_one(t_stack **dest, t_stack **src)
+{
+	t_stack	*temp;
+
+	if (!src || !*src)
+		return ;
+	temp = *src;
+	*src = (*src)->next;
+	if (*src)
+		(*src)->prev = NULL;
+	temp->next = *dest;
+	if (*dest)
+		(*dest)->prev = temp;
+	temp->prev = NULL;
+	*dest = temp;
+}
+
+void	pa(t_stack **stack_a, t_stack **stack_b)
+{
+	push_one(stack_a, stack_b);
+	write(1, "pa\n", 3);
+}
+
+void	pb(t_stack **stack_a, t_stack **stack_b)
+{
+	push_one(stack_b, stack_a);
+	write(1, "pb\n", 3);
+}

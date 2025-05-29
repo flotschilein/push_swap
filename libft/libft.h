@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:49:36 by fbraune           #+#    #+#             */
-/*   Updated: 2025/05/25 16:13:19 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/05/29 00:16:50 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 
 char	**ft_split(char const *s, char c);
+
+int		ft_sqrt(int num);
 
 t_list	*ft_lstnew(void *content);
 
