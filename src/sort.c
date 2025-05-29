@@ -6,12 +6,11 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:58:36 by fbraune           #+#    #+#             */
-/*   Updated: 2025/05/29 18:40:05 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/05/29 18:40:22 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
 
 static void	small_sort(t_stack **stack_a, t_stack **stack_b, int size)
 {
