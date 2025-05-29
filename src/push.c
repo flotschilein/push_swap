@@ -6,13 +6,13 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:12:22 by fbraune           #+#    #+#             */
-/*   Updated: 2025/05/28 22:13:45 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/05/29 22:27:35 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	push_one(t_stack **dest, t_stack **src)
+static void	push_one(t_stack **dest, t_stack **src)
 {
 	t_stack	*temp;
 

@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 15:27:03 by fbraune           #+#    #+#             */
-/*   Updated: 2025/05/29 22:19:13 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/05/29 22:44:49 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 #include <stdlib.h>
 #include <unistd.h>
+#include "../libft/libft.h"
 
 typedef struct s_stack
 {
@@ -27,5 +28,36 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
+int			main(int argc, char **argv);
+
+
+int			check_duplicates(t_stack *stack);
+char		*make_input(char **argv, char *input);
+int			parse_input(char *input, t_stack **stack_a);
+
+
+void		pa(t_stack **stack_a, t_stack **stack_b);
+void		pb(t_stack **stack_a, t_stack **stack_b);
+
+void		rra(t_stack **stack_a);
+void		rrb(t_stack **stack_b);
+void		rrr(t_stack **stack_a, t_stack **stack_b);
+
+void		ra(t_stack **stack_a);
+void		rb(t_stack **stack_b);
+void		rr(t_stack **stack_a, t_stack **stack_b);
+
+void		sa(t_stack **stack_a);
+void		sb(t_stack **stack_b);
+void		ss(t_stack **stack_a, t_stack **stack_b);
+
+
+void		sort_stack(t_stack **stack_a, t_stack **stack_b);
+
+
+void		free_array(char **array)
+int			node_add(t_stack **stack, int value)
+void		free_stack(t_stack **stack)
+void		assign_indices(t_stack **stack)
 
 #endif
