@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 16:02:16 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/01 19:19:23 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/01 19:25:00 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	is_valid_num(char *str)
 
 char	*make_input(char **argv)
 {
-	int	i;
+	int		i;
 	char	*input;
 	char	*temp;
 
