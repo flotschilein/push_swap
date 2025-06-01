@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:58:36 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/01 18:56:11 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/01 19:05:47 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,20 +96,18 @@ static void	k_sort(t_stack **stack_a, t_stack **stack_b, int size)
 
 	count = 0;
 	range = ft_sqrt(size) * 1.6;
-	while (size != 0)
+	while (size != count)
 	{
 		if ((*stack_a)->index <= count)
 		{
 			pb(stack_a, stack_b);
 			rb(stack_b);
 			count++;
-			size--;
 		}
 		else if ((*stack_a)->index < count + range)
 		{
 			pb(stack_a, stack_b);
 			count++;
-			size--;
 		}
 		else
 			ra(stack_a);
@@ -120,10 +118,8 @@ static void	k_sort(t_stack **stack_a, t_stack **stack_b, int size)
 void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 {
 	int		size;
-	t_stack	*current;
 
 	size = stack_size(*stack_a);
-	current = *stack_a;
 	if (size == 2)
 	{
 		if ((*stack_a)->value > (*stack_a)->next->value)

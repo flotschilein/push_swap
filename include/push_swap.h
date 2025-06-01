@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 15:27:03 by fbraune           #+#    #+#             */
-/*   Updated: 2025/05/30 00:15:18 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/01 19:11:13 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_stack
 int			main(int argc, char **argv);
 
 int			check_duplicates(t_stack *stack);
-char		*make_input(char **argv, char *input);
+char		*make_input(char **argv);
 int			parse_input(char *input, t_stack **stack_a);
 
 void		pa(t_stack **stack_a, t_stack **stack_b);

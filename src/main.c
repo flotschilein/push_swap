@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 15:18:26 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/01 18:22:06 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/01 19:11:04 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	input = NULL;
-	input = make_input(argv, input);
+	input = make_input(argv);
 	if (!input)
 		return (1);
 	if (!parse_input(input, &stack_a) || check_duplicates(stack_a))
