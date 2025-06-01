@@ -6,11 +6,24 @@
 /*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:29:03 by fbraune           #+#    #+#             */
-/*   Updated: 2025/05/29 16:47:14 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/05/30 00:15:02 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+int	stack_size(t_stack *stack)
+{
+	int	size;
+
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
+}
 
 void	free_array(char **array)
 {

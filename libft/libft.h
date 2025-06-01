@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:49:36 by fbraune           #+#    #+#             */
-/*   Updated: 2025/05/29 00:16:50 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/01 14:42:17 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_list
 
 int		ft_atoi(const char *str);
 
-int		ft_atoli(const char *str);
+long int	ft_atoli(const char *str);
 
 void	*ft_bzero(void *s, size_t n);
 

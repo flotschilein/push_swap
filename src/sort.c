@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:58:36 by fbraune           #+#    #+#             */
-/*   Updated: 2025/05/29 22:05:52 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/01 18:56:11 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ static void	sort_three(t_stack **stack_a)
 	int	b;
 	int	c;
 
-	a = (*stack_a)->value;
-	b = (*stack_a)->next->value;
-	c = (*stack_a)->next->next->value;
+	a = (*stack_a)->index;
+	b = (*stack_a)->next->index;
+	c = (*stack_a)->next->next->index;
 	if (a > b && b < c && a < c)
 		sa(stack_a);
 	else if (a > b && b > c && a > c)
@@ -41,41 +41,51 @@ static void	sort_three(t_stack **stack_a)
 
 static void	sort_four_five(t_stack **stack_a, t_stack **stack_b, int size)
 {
-	int		min_index;
-	t_stack	*current;
-	int		numbers_to_push;
+	int	push;
 
-	numbers_to_push = size - 3;  // Push 1 for 4 numbers, 2 for 5 numbers
-	while (numbers_to_push--)
+	push = size - 3;
+	while (push != 0)
 	{
-		min_index = 0;
-		current = *stack_a;
-		while (current)
+		if ((*stack_a)->index == 0 || ((*stack_a)->index == 1 && size == 5))
 		{
-			if (current->value < (*stack_a)->value)
-				min_index++;
-			current = current->next;
+			pb(stack_a, stack_b);
+			push--;
 		}
-		while (min_index--)
+		else
 			ra(stack_a);
-		pb(stack_a, stack_b);
 	}
 	sort_three(stack_a);
+	if (size == 5 && (*stack_b)->index == 0 && (*stack_b)->next)
+		sb(stack_b);
 	while (*stack_b)
 		pa(stack_a, stack_b);
 }
 
-static void	push_back(t_stack **stack_a, t_stack **stack_b, int count)
+static void	push_back(t_stack **stack_a, t_stack **stack_b, int c)
 {
+	int		p;
+	t_stack	*cur;
+
 	while (*stack_b)
 	{
-		if ((*stack_b)->index == count - 1)
+		if ((*stack_b)->index == c - 1)
 		{
 			pa(stack_a, stack_b);
-			count--;
+			c--;
 		}
 		else
-			rrb(stack_b);
+		{
+			p = 0;
+			cur = *stack_b;
+			while (cur && cur->index != c - 1 && ++p)
+				cur = cur->next;
+			if (p == 1)
+				sb(stack_b);
+			else if (p <= stack_size(*stack_b) / 2)
+				rb(stack_b);
+			else
+				rrb(stack_b);
+		}
 	}
 }
 
@@ -112,13 +122,8 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	int		size;
 	t_stack	*current;
 
-	size = 0;
+	size = stack_size(*stack_a);
 	current = *stack_a;
-	while (current)
-	{
-		size++;
-		current = current->next;
-	}
 	if (size == 2)
 	{
 		if ((*stack_a)->value > (*stack_a)->next->value)

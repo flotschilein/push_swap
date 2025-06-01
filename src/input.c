@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 16:02:16 by fbraune           #+#    #+#             */
-/*   Updated: 2025/05/29 16:19:57 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/01 18:23:21 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,8 @@ int	parse_input(char *input, t_stack **stack_a)
 	int			i;
 	long int	num;
 
+	if (!input || !*input)
+		return (0);
 	split = ft_split(input, ' ');
 	if (!split)
 		return (0);
@@ -87,7 +89,7 @@ int	parse_input(char *input, t_stack **stack_a)
 		if (!is_valid_num(split[i]))
 			return (free_array(split), 0);
 		num = ft_atoli(split[i]);
-		if (num > INT_MAX || num < INT_MIN)
+		if (num > 2147483647 || num < -2147483648)
 			return (free_array(split), 0);
 		if (!node_add(stack_a, (int)num))
 			return (free_array(split), free_stack(stack_a), 0);

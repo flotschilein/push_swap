@@ -6,7 +6,48 @@
 #    By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/22 14:05:55 by fbraune           #+#    #+#              #
-#    Updated: 2025/05/29 22:44:28 by fbraune          ###   ########.fr        #
+#    Updated: 2025/05/29 22:50:37 by fbraune          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = push_swap
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+SRC_DIR = src/
+LIBFT_DIR = libft/
+INCLUDES = -I include/ -I $(LIBFT_DIR)
+
+SRC = $(SRC_DIR)main.c \
+      $(SRC_DIR)input.c \
+      $(SRC_DIR)utils.c \
+      $(SRC_DIR)sort.c \
+      $(SRC_DIR)swap.c \
+      $(SRC_DIR)push.c \
+      $(SRC_DIR)rotate.c \
+      $(SRC_DIR)rev_rotate.c
+
+OBJ = $(SRC:.c=.o)
+LIBFT = $(LIBFT_DIR)libft.a
+
+all: $(NAME)
+
+$(NAME): $(OBJ) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+
+$(LIBFT):
+	make -C $(LIBFT_DIR)
+
+%.o: %.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+clean:
+	make -C $(LIBFT_DIR) clean
+	rm -f $(OBJ)
+
+fclean: clean
+	make -C $(LIBFT_DIR) fclean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

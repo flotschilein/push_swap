@@ -6,13 +6,13 @@
 /*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 16:12:15 by fbraune           #+#    #+#             */
-/*   Updated: 2025/05/25 16:13:05 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/01 14:42:47 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoli(const char *str)
+long int	ft_atoli(const char *str)
 {
 	long int	i;
 	long int	res;
@@ -36,7 +36,7 @@ int	ft_atoli(const char *str)
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
-	return ((int)(res * sign));
+	return (res * sign);
 }
 
 // int main(void)
