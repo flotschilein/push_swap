@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:01:30 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 13:35:31 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/03 21:47:54 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,31 @@ static void	swap_two(t_stack **stack)
 	*stack = second;
 }
 
-void	sa(t_stack **stack_a)
+void	sa(t_stack **stack_a, int c)
 {
 	if (!stack_a || !*stack_a || !(*stack_a)->next)
 		return ;
 	swap_two(stack_a);
-	write(1, "sa\n", 3);
+	if (c == 1)
+		write(1, "sa\n", 3);
 }
 
-void	sb(t_stack **stack_b)
+void	sb(t_stack **stack_b, int c)
 {
 	if (!stack_b || !*stack_b || !(*stack_b)->next)
 		return ;
 	swap_two(stack_b);
-	write(1, "sb\n", 3);
+	if (c == 1)
+		write(1, "sb\n", 3);
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b, int c)
 {
 	if ((!stack_a || !*stack_a || !(*stack_a)->next) && (!stack_b || !*stack_b
 			|| !(*stack_b)->next))
 		return ;
 	swap_two(stack_a);
 	swap_two(stack_b);
-	write(1, "ss\n", 3);
+	if (c == 1)
+		write(1, "ss\n", 3);
 }

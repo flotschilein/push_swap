@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:12:22 by fbraune           #+#    #+#             */
-/*   Updated: 2025/05/29 22:27:35 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/03 21:45:18 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,16 @@ static void	push_one(t_stack **dest, t_stack **src)
 	*dest = temp;
 }
 
-void	pa(t_stack **stack_a, t_stack **stack_b)
+void	pa(t_stack **stack_a, t_stack **stack_b, int c)
 {
 	push_one(stack_a, stack_b);
-	write(1, "pa\n", 3);
+	if (c == 1)
+		write(1, "pa\n", 3);
 }
 
-void	pb(t_stack **stack_a, t_stack **stack_b)
+void	pb(t_stack **stack_a, t_stack **stack_b, int c)
 {
 	push_one(stack_b, stack_a);
-	write(1, "pb\n", 3);
+	if (c == 1)
+		write(1, "pb\n", 3);
 }

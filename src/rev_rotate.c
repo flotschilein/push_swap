@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 22:14:27 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 13:34:59 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/03 21:46:29 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,28 +28,31 @@ static void	rev_rotate_one(t_stack **stack)
 	*stack = last;
 }
 
-void	rra(t_stack **stack_a)
+void	rra(t_stack **stack_a, int c)
 {
 	if (!stack_a || !*stack_a || !(*stack_a)->next)
 		return ;
 	rev_rotate_one(stack_a);
-	write(1, "rra\n", 4);
+	if (c == 1)
+		write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack **stack_b)
+void	rrb(t_stack **stack_b, int c)
 {
 	if (!stack_b || !*stack_b || !(*stack_b)->next)
 		return ;
 	rev_rotate_one(stack_b);
-	write(1, "rrb\n", 4);
+	if (c == 1)
+		write(1, "rrb\n", 4);
 }
 
-void	rrr(t_stack **stack_a, t_stack **stack_b)
+void	rrr(t_stack **stack_a, t_stack **stack_b, int c)
 {
 	if ((!stack_a || !*stack_a || !(*stack_a)->next) && (!stack_b || !*stack_b
 			|| !(*stack_b)->next))
 		return ;
 	rev_rotate_one(stack_a);
 	rev_rotate_one(stack_b);
-	write(1, "rrr\n", 4);
+	if (c == 1)
+		write(1, "rrr\n", 4);
 }

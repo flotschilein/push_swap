@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gnl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:20:33 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 21:24:07 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/03 22:09:27 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	char		*temp;
 
-	if (fd < 0 )
+	if (fd < 0)
 		return (buffer[0] = '\0', NULL);
 	if (ft_strchr(buffer, '\n'))
 		return (line = get_line_buffer(buffer), buffer_move(buffer), line);
