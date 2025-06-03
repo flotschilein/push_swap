@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:58:36 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 22:09:09 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/03 22:20:51 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static void	k_sort(t_stack **stack_a, t_stack **stack_b, int size)
 			count++;
 		}
 		else
-			ra(stack_a);
+			ra(stack_a, 1);
 	}
 	push_back(stack_a, stack_b, count);
 }

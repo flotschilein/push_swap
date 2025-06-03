@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 18:49:36 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 22:19:35 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/03 22:26:01 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *s);
 
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+int					ft_strcmp(char *s1, char *s2);
 
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 

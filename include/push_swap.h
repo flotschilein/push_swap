@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 15:27:03 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 22:08:54 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/03 22:47:09 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,6 @@ int			node_add(t_stack **stack, int value);
 void		free_stack(t_stack **stack);
 void		assign_indices(t_stack **stack);
 
-char		*get_next_line(int fd);
+int			get_next_line(int fd, char **line);
 
 #endif

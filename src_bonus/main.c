@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 17:35:34 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 22:14:44 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/04 00:01:53 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,9 @@ int	main(int argc, char **argv)
 	if (!test_sort(0, &a, &b))
 		return (free_stack(&a), free_stack(&b), write(2, "Error\n", 6), 1);
 	if (is_sorted(&a) && !b)
-		write(1, "OK\n", 3);
-	else
 		write(1, "KO\n", 3);
+	else
+		write(1, "OK\n", 3);
 	free_stack(&a);
 	free_stack(&b);
 	return (0);

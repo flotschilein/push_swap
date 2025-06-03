@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 21:20:33 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 22:09:27 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/04 00:00:14 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,50 +54,55 @@ static void	buffer_move(char *buffer)
 	buffer[j] = '\0';
 }
 
-static char	*read_to_buffer(int fd, char *buffer, char *temp)
+static int	read_to_buffer(int fd, char *buffer, char **temp)
 {
 	char	buffer_read[2];
 	int		read_bytes;
 	char	*temp_old;
 
 	read_bytes = 1;
-	while (read_bytes > 0 && !ft_strchr(temp, '\n'))
+	while (read_bytes > 0 && !ft_strchr(*temp, '\n'))
 	{
 		read_bytes = read(fd, buffer_read, 1);
 		if (read_bytes == -1)
-			return (free(temp), buffer[0] = '\0', NULL);
+			return (free(*temp), *temp = NULL, buffer[0] = '\0', 0);
 		if (read_bytes == 0)
 			break ;
 		buffer_read[read_bytes] = '\0';
-		temp_old = temp;
-		temp = ft_strjoin(temp_old, buffer_read);
+		temp_old = *temp;
+		*temp = ft_strjoin(temp_old, buffer_read);
 		free(temp_old);
-		if (!temp)
-			return (NULL);
+		if (!*temp)
+			return (0);
 	}
-	return (temp);
+	return (1);
 }
 
-char	*get_next_line(int fd)
+int	get_next_line(int fd, char **line)
 {
 	static char	buffer[2];
-	char		*line;
 	char		*temp;
 
-	if (fd < 0)
-		return (buffer[0] = '\0', NULL);
+	if (fd < 0 || !line)
+		return (-1);
 	if (ft_strchr(buffer, '\n'))
-		return (line = get_line_buffer(buffer), buffer_move(buffer), line);
+	{
+		*line = get_line_buffer(buffer);
+		if (!*line)
+			return (-1);
+		buffer_move(buffer);
+		return (1);
+	}
 	temp = ft_strdup(buffer);
 	if (!temp)
-		return (NULL);
+		return (-1);
 	buffer[0] = '\0';
-	temp = read_to_buffer(fd, buffer, temp);
-	if (!temp)
-		return (NULL);
-	line = get_line_buffer(temp);
-	if (line && temp[0])
-		ft_strlcpy(buffer, temp + ft_strlen(line), 2);
-	free(temp);
-	return (line);
+	if (!read_to_buffer(fd, buffer, &temp))
+		return (-1);
+	*line = get_line_buffer(temp);
+	if (!*line)
+		return (free(temp), -1);
+	if (temp[0])
+		ft_strlcpy(buffer, temp + ft_strlen(*line), 2);
+	return (free(temp), 1);
 }
