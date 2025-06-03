@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:58:36 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/01 19:05:47 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/02 21:37:50 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,8 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	int		size;
 
 	size = stack_size(*stack_a);
+	if (size == 1)
+		return ;
 	if (size == 2)
 	{
 		if ((*stack_a)->value > (*stack_a)->next->value)
@@ -127,7 +129,7 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	}
 	else if (size == 3)
 		sort_three(stack_a);
-	else if (size == 4 || size == 5)
+	else if (size <= 5)
 		sort_four_five(stack_a, stack_b, size);
 	else
 		k_sort(stack_a, stack_b, size);

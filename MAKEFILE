@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    MAKEFILE                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+         #
+#    By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/22 14:05:55 by fbraune           #+#    #+#              #
-#    Updated: 2025/05/29 22:50:37 by fbraune          ###   ########.fr        #
+#    Updated: 2025/06/02 21:57:24 by fbraune          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+
 SRC_DIR = src/
 LIBFT_DIR = libft/
 INCLUDES = -I include/ -I $(LIBFT_DIR)
