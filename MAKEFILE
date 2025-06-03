@@ -6,7 +6,7 @@
 #    By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/22 14:05:55 by fbraune           #+#    #+#              #
-#    Updated: 2025/06/02 21:57:24 by fbraune          ###   ########.fr        #
+#    Updated: 2025/06/03 15:29:37 by fbraune          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ INCLUDES = -I include/ -I $(LIBFT_DIR)
 SRC = $(SRC_DIR)main.c \
       $(SRC_DIR)input.c \
       $(SRC_DIR)utils.c \
+	  $(SRC_DIR)sort_small.c \
       $(SRC_DIR)sort.c \
       $(SRC_DIR)swap.c \
       $(SRC_DIR)push.c \

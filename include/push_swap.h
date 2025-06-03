@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 15:27:03 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/01 19:24:36 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/03 15:30:02 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void				sb(t_stack **stack_b);
 void				ss(t_stack **stack_a, t_stack **stack_b);
 
 void				sort_stack(t_stack **stack_a, t_stack **stack_b);
+void				sort_three(t_stack **stack_a);
+void				sort_four_five(t_stack **stack_a, t_stack **stack_b, int size);
 
 int					stack_size(t_stack *stack);
 void				free_array(char **array);
