@@ -6,13 +6,13 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 17:35:34 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/04 00:01:53 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/04 22:47:44 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-static int	do_operations(char *line, t_stack **stack_a, t_stack **stack_b)
+static int	execute_operations(char *line, t_stack **stack_a, t_stack **stack_b)
 {
 	if (ft_strcmp(line, "pa\n") == 0)
 		pa(stack_a, stack_b, 0);
@@ -59,7 +59,7 @@ static int	test_sort(int fd, t_stack **stack_a, t_stack **stack_b)
 		}
 		if (!line)
 			return (0);
-		if (!do_operations(line, stack_a, stack_b))
+		if (!execute_operations(line, stack_a, stack_b))
 		{
 			free(line);
 			return (0);
