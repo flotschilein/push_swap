@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 16:58:36 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 22:20:51 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/06 18:55:29 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	is_sorted(t_stack **stack_a)
 	current = *stack_a;
 	while (current && current->next)
 	{
-		if (current->value > current->next->value)
+		if (current->index > current->next->index)
 			return (1);
 		current = current->next;
 	}
@@ -91,7 +91,7 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 		return ;
 	if (size == 2)
 	{
-		if ((*stack_a)->value > (*stack_a)->next->value)
+		if ((*stack_a)->index > (*stack_a)->next->index)
 			sa(stack_a, 1);
 	}
 	else if (size == 3)

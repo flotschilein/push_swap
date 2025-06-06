@@ -6,7 +6,7 @@
 #    By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/22 14:05:55 by fbraune           #+#    #+#              #
-#    Updated: 2025/06/03 22:36:34 by fbraune          ###   ########.fr        #
+#    Updated: 2025/06/06 20:07:21 by fbraune          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,18 +20,18 @@ BONUS_DIR = src_bonus/
 LIBFT_DIR = libft/
 INCLUDES = -I include/ -I $(LIBFT_DIR)
 
-SRC = $(SRC_DIR)main.c \
-      $(SRC_DIR)input.c \
-      $(SRC_DIR)utils.c \
-	  $(SRC_DIR)sort_small.c \
-      $(SRC_DIR)sort.c \
-      $(SRC_DIR)swap.c \
-      $(SRC_DIR)push.c \
-      $(SRC_DIR)rotate.c \
-      $(SRC_DIR)rev_rotate.c
+SRC =	$(SRC_DIR)main.c \
+		$(SRC_DIR)input.c \
+		$(SRC_DIR)utils.c \
+		$(SRC_DIR)sort_small.c \
+		$(SRC_DIR)sort.c \
+		$(SRC_DIR)swap.c \
+		$(SRC_DIR)push.c \
+		$(SRC_DIR)rotate.c \
+		$(SRC_DIR)rev_rotate.c
 
-BONUS_SRC = $(BONUS_DIR)main.c \
-            $(BONUS_DIR)gnl.c \
+BONUS_SRC = $(BONUS_DIR)main_bonus.c \
+			$(BONUS_DIR)gnl_bonus.c \
 			$(SRC_DIR)push.c \
 			$(SRC_DIR)swap.c \
 			$(SRC_DIR)rotate.c \
@@ -47,7 +47,7 @@ LIBFT = $(LIBFT_DIR)libft.a
 
 all: $(NAME)
 
-bonus: $(BONUS_NAME)
+bonus: $(NAME) $(BONUS_NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)

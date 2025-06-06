@@ -6,12 +6,12 @@
 #    By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/13 20:06:49 by fbraune           #+#    #+#              #
-#    Updated: 2025/06/03 22:26:19 by fbraune          ###   ########.fr        #
+#    Updated: 2025/06/06 17:25:46 by fbraune          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 		= libft.a
-CC   		= gcc
+CC   		= cc
 Flag 		= -Wall -Wextra -Werror -c
 SRC  		= ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_strcmp.c\
 				ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
