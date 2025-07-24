@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:01:30 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 22:19:05 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/07/20 21:24:24 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	sb(t_stack **stack_b, int c)
 
 void	ss(t_stack **stack_a, t_stack **stack_b, int c)
 {
-	if ((!stack_a || !*stack_a || !(*stack_a)->next) && (!stack_b || !*stack_b
+	if ((!stack_a || !*stack_a || !(*stack_a)->next) || (!stack_b || !*stack_b
 			|| !(*stack_b)->next))
 		return ;
 	swap_two(stack_a);

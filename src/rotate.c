@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:15:19 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 22:18:54 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/07/20 21:24:10 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	rb(t_stack **stack_b, int c)
 
 void	rr(t_stack **stack_a, t_stack **stack_b, int c)
 {
-	if ((!stack_a || !*stack_a || !(*stack_a)->next) && (!stack_b || !*stack_b
+	if ((!stack_a || !*stack_a || !(*stack_a)->next) || (!stack_b || !*stack_b
 			|| !(*stack_b)->next))
 		return ;
 	rotate_one(stack_a);

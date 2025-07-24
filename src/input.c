@@ -6,7 +6,7 @@
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/25 16:02:16 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/03 22:18:36 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/06/26 19:29:20 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	parse_input(char *input, t_stack **stack_a)
 
 	if (!input || !*input)
 		return (0);
-	split = ft_split(input, ' ');
+	split = ft_split(input, ' ');//input = 213123|2|23|24|5
 	if (!split)
 		return (0);
 	i = 0;
