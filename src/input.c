@@ -89,7 +89,7 @@ int	parse_input(char *input, t_stack **stack_a)
 
 	if (!input || !*input)
 		return (0);
-	split = ft_split(input, ' ');//input = 213123|2|23|24|5
+	split = ft_split(input, ' ');
 	if (!split)
 		return (0);
 	i = 0;
