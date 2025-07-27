@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbraune <fbraune@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 17:35:34 by fbraune           #+#    #+#             */
-/*   Updated: 2025/06/04 22:47:44 by fbraune          ###   ########.fr       */
+/*   Updated: 2025/07/27 15:24:28 by fbraune          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,9 @@ int	main(int argc, char **argv)
 	free(input);
 	if (!test_sort(0, &a, &b))
 		return (free_stack(&a), free_stack(&b), write(2, "Error\n", 6), 1);
-	if (is_sorted(&a) && !b)
+	if (b)
+		write(1, "KO\n", 3);
+	else if (is_sorted(&a))
 		write(1, "KO\n", 3);
 	else
 		write(1, "OK\n", 3);
